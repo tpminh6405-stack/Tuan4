@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>UEH + Avatar Group</title>
+
+<style>
+  /* ===== Toàn trang ===== */
+  body {
+    margin: 0;
+    height: 100vh;
+    background-color: #ffffff; /* nền tối để chữ nổi bật */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 50px; /* khoảng cách giữa chữ và ảnh */
+    font-family: Arial, sans-serif;
+  }
+
+  /* ===== Hiệu ứng chữ UEH ===== */
+  .at-item {
+    color: #3079ed;
+    font-weight: bold;
+    font-size: 3em;
+    text-transform: uppercase;
+    animation: text-shadow-multicolor 2s ease 0s infinite normal none;
+  }
+
+  @keyframes text-shadow-multicolor {
+    0% {
+      text-shadow: 0 0px 15px #f0f;
+    }
+    33% {
+      text-shadow: 0 0px 15px #0ff;
+    }
+    66% {
+      text-shadow: 0 0px 10px #0f0;
+    }
+    100% {
+      text-shadow: 0 0px 10px #ff0;
+    }
+  }
+
+  /* ===== Nhóm avatar ===== */
+  .avatar-group {
+    display: flex;
+    align-items: center;
+  }
+
+  .avatar {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 4px solid white;
+    margin-left: -30px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.3);
+    transition: transform 0.3s ease;
+  }
+
+  .avatar:first-child {
+    margin-left: 0;
+  }
+
+  .avatar:hover {
+    transform: scale(1.1);
+    z-index: 10;
+  }
+
+  .avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+</style>
+</head>
+
+<body>
+  <!-- Hiệu ứng chữ UEH -->
+  <div class="at-item">Đại học UEH</div>
+
+  <!-- Avatar Group -->
+  <div class="avatar-group">
+    <div class="avatar"><img src="img/uifaces-cartoon-avatar.jpg" alt="Avatar 1"></div>
+    <div class="avatar"><img src="img/uifaces-cartoon-avatar (1).jpg" alt="Avatar 2"></div>
+    <div class="avatar"><img src="img/uifaces-cartoon-avatar (2).jpg" alt="Avatar 3"></div>
+  </div>
+</body>
+</html>
